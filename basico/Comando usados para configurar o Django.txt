@@ -11,4 +11,8 @@ django-admin startproject django1 . # ponto para n cirar um novo diretorio  PROJ
 django-admin startapp core # core é o nome da aplicação, vc escolhe  APLICAÇÂO
 
 
-python manage.py runserver
+python3 manage.py runserver
+
+python3 manage.py makemigrations  # pega todas as aplicações que estão no projeto, todos os modelos e crirar um arquivo de migration
+
+python3 manage.py migrate # aplica a migration
