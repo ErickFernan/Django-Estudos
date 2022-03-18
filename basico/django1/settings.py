@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],  # O diretorio irá conter os templates e será criado futuramente
-        'APP_DIRS': True,
+        'APP_DIRS': True,  # Diretorio da aplicação? sim | Melhor colocar cada aplicação tendo os prórprios templates
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
