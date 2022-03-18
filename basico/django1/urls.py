@@ -18,6 +18,6 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # muda o endereço para o adminstrador
     path('', include('core.urls'))  # para qualquer coisa que chamar na raiz quero incluir core...
 ]
