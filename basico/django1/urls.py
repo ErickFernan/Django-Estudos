@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls import handler404
+
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # muda o endereço para o adminstrador
     path('', include('core.urls'))  # para qualquer coisa que chamar na raiz quero incluir core...
 ]
+
+handler404 = views.error404
+handler500 = views.error500
