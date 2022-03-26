@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y)_0ayp#a)d-!xkvmmd1@_1l&be=-y8#yxkru0^@=p*=h(4zf*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # DEBUG = TRUE = MODO DESENVOLVIMENTO | # DEBUG = FALSE = MODO PRODUÇÃO (PRONTO PARA USO)
+DEBUG = False  # DEBUG = TRUE = MODO DESENVOLVIMENTO | # DEBUG = FALSE = MODO PRODUÇÃO (PRONTO PARA USO)
 
 ALLOWED_HOSTS = ['*']  # Aspas p/ string e * para "qlqr coisa"
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
