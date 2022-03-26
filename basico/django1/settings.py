@@ -25,7 +25,7 @@ SECRET_KEY = 'y)_0ayp#a)d-!xkvmmd1@_1l&be=-y8#yxkru0^@=p*=h(4zf*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  # DEBUG = TRUE = MODO DESENVOLVIMENTO | # DEBUG = FALSE = MODO PRODUÇÃO (PRONTO PARA USO)
 
-ALLOWED_HOSTS = ['*']  # Aspas p/ string e * para "qlqr coisa"
+ALLOWED_HOSTS = ['django1-ef.herokuapp.com']  # Aspas p/ string e * para "qlqr coisa"
 
 
 # Application definition
