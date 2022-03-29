@@ -1,0 +1,14 @@
+Comando usados para configurar  Django
+
+sudo apt install python3-django
+
+pip install django
+
+pip freeze > requirements.txt
+
+django-admin startproject django1 . # ponto para n cirar um novo diretorio  PROJETO
+
+django-admin startapp core # core é o nome da aplicação, vc escolhe  APLICAÇÂO
+
+
+python manage.py runserver
