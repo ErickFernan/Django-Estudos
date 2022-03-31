@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from .forms import ContatoForm, ProdutoModelForm  # Estou importando o formulario criado no forms
 from django.contrib import messages
+from .models import Produto
 
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'produtos': Produto.objects.all()
+    }
+    return render(request, 'index.html', context)
 
 
 def produto(request):
