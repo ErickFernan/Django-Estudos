@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v^c-!&7870+kkxlwz!9ibk+p^bq8s@oa-nj!c*p7d1-1ooec+1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'django2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-"""
-Vamo mudar para o postgree pq o heroku n dá suporte para o mysql no plano free
+
+# Vamos mudar para o postgree pq o heroku n dá suporte para o mysql no plano free
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,11 +92,13 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
 """
 # Usando PostgreSQL com Heroku
 DATABASES = {
     'default': dj_database_url.config()
 }
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -143,7 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configurações para e-mail
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Simula o servidor de e-mail no console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Simula o servidor de e-mail no console
 
 # Configurações caso possua um servidor de e-mail
 """
