@@ -12,18 +12,19 @@
             <div class="content-left">
 
               {% for r in recursos %}
-
-                <!-- itens esquerda -->
-                <div class="box-item wow fadeInLeft" data-wow-delay="{{ forloop.counter0 }}s">
-                  <span class="icon">
-                    <i class="{{ r.icone }}"></i>
-                  </span>
-                  <div class="text">
-                    <h4>{{ r.recurso }}</h4>
-                    <p>{{ r.descricao }}</p>
+                {% if forloop.counter <= 3 %}
+                  <!-- itens esquerda -->
+                  <div class="box-item wow fadeInLeft" data-wow-delay="{{ forloop.counter0 }}s">
+                    <span class="icon">
+                      <i class="{{ r.icone }}"></i>
+                    </span>
+                    <div class="text">
+                      <h4>{{ r.recurso }}</h4>
+                      <p>{{ r.descricao }}</p>
+                    </div>
                   </div>
-                </div>
-                <!-- itens esquerda -->
+                  <!-- itens esquerda -->
+                {% endif %}
               {% endfor %}
 
             </div>
@@ -43,37 +44,21 @@
           <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div class="content-right">
 
-              <!-- itens direita -->
-              <div class="box-item wow fadeInRight" data-wow-delay="0.3s">
-                <span class="icon">
-                  <i class="lni-leaf"></i>
-                </span>
-                <div class="text">
-                  <h4>Modern Design</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                </div>
-              </div>
-
-              <div class="box-item wow fadeInRight" data-wow-delay="0.6s">
-                <span class="icon">
-                  <i class="lni-layers"></i>
-                </span>
-                <div class="text">
-                  <h4>Multi-purpose Template</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-
-              <div class="box-item wow fadeInRight" data-wow-delay="0.9s">
-                <span class="icon">
-                  <i class="lni-leaf"></i>
-                </span>
-                <div class="text">
-                  <h4>Working Contact Form</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-              <!-- itens direita -->
+              {% for r in recursos %}
+                {% if forloop.counter > 3 %}
+                  <!-- itens direita -->
+                  <div class="box-item wow fadeInRight" data-wow-delay="{{ forloop.counter0|add:'-3' }}s">
+                    <span class="icon">
+                      <i class="{{r.icone}}"></i>
+                    </span>
+                    <div class="text">
+                      <h4>{{ r.recurso }}</h4>
+                      <p>{{ r.descricao }}</p>
+                    </div>
+                  </div>
+                  <!-- itens direita -->
+                {% endif %}
+              {% endfor %}
 
             </div>
           </div>
