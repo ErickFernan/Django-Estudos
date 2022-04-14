@@ -9,6 +9,20 @@ def get_file_path(_instance, filename):
     return filename
 
 
+def icones():
+    icone_choices = (
+        ('lni-cog', 'Engrenagem'),
+        ('lni-stats-up', 'Gráfico'),
+        ('lni-users', 'Usuários'),
+        ('lni-layers', 'Design'),
+        ('lni-mobile', 'Mobile'),
+        ('lni-rocket', 'Foguete'),
+        ('lni-laptop-phone', 'Computador/celular'),
+        ('lni-leaf', 'Folha'),
+    )
+    return icone_choices
+
+
 class Base(models.Model):
     criado = models.DateField('Criação', auto_now_add=True)
     modificado = models.DateField('Atualização', auto_now=True)
@@ -19,18 +33,9 @@ class Base(models.Model):
 
 
 class Servico(Base):
-    ICONE_CHOICES = (
-        ('lni-cog', 'Engrenagem'),
-        ('lni-stats-up', 'Gráfico'),
-        ('lni-users', 'Usuários'),
-        ('lni-layers', 'Design'),
-        ('lni-mobile', 'Mobile'),
-        ('lni-rocket', 'Foguete'),
-    )
-
     servico = models.CharField('Serviço', max_length=100)
     descricao = models.TextField('Descrição', max_length=200)
-    icone = models.CharField('Icone', max_length=12, choices=ICONE_CHOICES)
+    icone = models.CharField('Icone', max_length=16, choices=icones())
 
     class Meta:
         verbose_name = 'Serviço'
@@ -67,3 +72,16 @@ class Funcionario(Base):
 
     def __str__(self):
         return self.nome
+
+
+class Recurso(Base):
+    recurso = models.CharField('Recurso', max_length=100)
+    descricao = models.TextField('Descrição', max_length=200)
+    icone = models.CharField('Icone', max_length=16, choices=icones(), default='#')
+
+    class Meta:
+        verbose_name = 'Recurso'
+        verbose_name_plural = 'Recursos'
+
+    def __str__(self):
+        return self.recurso
